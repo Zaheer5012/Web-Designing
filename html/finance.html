@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+  <meta charset="utf-8">
+  <title>Finance Calculator</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="https://kit.fontawesome.com/27ee7bbeb2.js" crossorigin="anonymous"></script>
+        <link rel="shortcut icon" href="../icon/favicon.ico" type="image/x-icon">
+
+<script>
+      
+          function calculate(){
+
+            var P = 0;
+            var PMT = 0;
+            var r = 0;
+            var n = 0;
+
+            PMT = parseInt(document.getElementById("PMT").value);
+            r = parseInt(document.getElementById("r").value);
+            n = parseInt(document.getElementById("n").value);
+
+
+            P = PMT * ((1-(1/(1+r)^n))/r);
+            document.getElementById("result").innerHTML=P;
+          }
+      </script>
+
+</head>
+
+
+
+
+
+<body>
+    <div class="container"> 
+      <div>
+  <nav>
+<ul>
+  <li><a class="active" href="../index.html">Netwon's Calcuator</a></li>
+  <li><a href="kinematic.html">Kinematic Physic Equation Calculator</a></li>
+  <li><a href="math.html">Math Calculator</a></li>
+  <li><a href="#finance">Finance Calculator</a></li>
+</ul>
+</nav>
+</div>
+
+  <div class="center">
+    <h2 id="title">Finance Calculator  <i class="fas fa-calculator"></i></h2>
+<div>
+<form class="form" method="post">
+  <label class="name" for="PMT">Dollar amount for each annuity payment</label><br>
+  <input class="corner" type="text" id="PMT" placeholder="Velocity"><br><br>
+  <label class="name" for="Rate">Interest Rate</label><br>
+  <input class="corner" type="text" id="r" placeholder="Rate"><br><br>
+  <label class="name" for="Number">Number of Periods</label><br>
+  <input class="corner" type="text"  id="n" placeholder="Number"><br><br>
+
+
+  <button type="button"  class="button" onclick="calculate()" >Calculator</button>
+
+              <div>
+                   <h2 id="result">0</h2>
+            </div>
+</form> 
+</div>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

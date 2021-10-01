@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+
+
+  <meta charset="utf-8">
+  <title>Math Calculator</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="https://kit.fontawesome.com/27ee7bbeb2.js" crossorigin="anonymous"></script>
+        <link rel="shortcut icon" href="../icon/favicon.ico" type="image/x-icon">
+
+<script>
+      
+          function calculate(){
+
+            var a = 0;
+            var b = 0;
+            var c = 0;
+            var x = 0;
+            var y = 0;
+
+            a = parseInt(document.getElementById("a").value);
+            b = parseInt(document.getElementById("b").value);
+            c = parseInt(document.getElementById("c").value);
+
+
+            x = (-b + Math.sqrt(-b^2 - 4*a*c))/2*a;
+            y = (-b + Math.sqrt(-b^2 - 4*a*c))/2*a;
+            document.getElementById("result").innerHTML=x;
+            document.getElementById("result").innerHTML=y;
+          }
+      </script>
+
+</head>
+
+
+
+
+
+<body>
+    <div class="container"> 
+      <div>
+  <nav>
+<ul>
+  <li><a class="active" href="../index.html">Netwon's Calcuator</a></li>
+  <li><a href="kinematic.html">Kinematic Physic Equation Calculator</a></li>
+  <li><a href="#math">Math Calculator</a></li>
+  <li><a href="finance.html">Finance Calculator</a></li>
+</ul>
+</nav>
+</div>
+
+  <div class="center">
+    <h2 id="title">Math Calculator  <i class="fas fa-calculator"></i></h2>
+<div>
+<form class="form" method="post">
+  <label class="name" for="a">One side of the triangle</label><br>
+  <input class="corner" type="text" id="a" placeholder="a"><br><br>
+  <label class="name" for="b">Another side of the triangle</label><br>
+  <input class="corner" type="text" id="b" placeholder="b"><br><br>
+  <label class="name" for="c">Some other side of the triangle</label><br>
+  <input class="corner" type="text"  id="c" placeholder="c"><br><br>
+
+
+  <button type="button"  class="button" onclick="calculate();" >Calculate</button>
+
+              <div>
+                   <h2 id="result">0</h2>
+            </div>
+</form> 
+</div>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

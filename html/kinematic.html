@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+	<meta charset="utf-8">
+	<title>Kinematic Physic Equation Calculator</title>
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<script src="https://kit.fontawesome.com/27ee7bbeb2.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="../icon/favicon.ico" type="image/x-icon">
+
+<script>
+      
+          function calculate(){
+
+            var v = 0;
+            var t = 0;
+            var a = 0;
+            var D = 0;
+
+            v = parseInt(document.getElementById("Velocity").value);
+            t = parseInt(document.getElementById("Time").value);
+            a = parseInt(document.getElementById("Acceleration").value);
+
+
+            D = v*t - (1/2) * a * Math.pow(t,2);
+            document.getElementById("result").innerHTML=D;
+          }
+      </script>
+
+</head>
+
+
+
+
+
+<body>
+	  <div class="container"> 
+	  	<div>
+	<nav>
+<ul>
+  <li><a class="active" href="../index.html">Netwon's Calcuator</a></li>
+  <li><a href="#Kinematic">Kinematic Physic Equation Calculator</a></li>
+  <li><a href="math.html">Math Calculator</a></li>
+  <li><a href="finance.html">Finance Calculator</a></li>
+</ul>
+</nav>
+</div>
+
+  <div class="center">
+  	<h2 id="title">Kinematic Physic Equation Calculator  <i class="fas fa-calculator"></i></h2>
+<div>
+<form class="form" method="post">
+  <label class="name" for="Velocity">Initial Velocity m/s<sup>2</sup></label><br>
+  <input class="corner" type="text" id="Velocity" placeholder="Velocity"><br><br>
+  <label class="name" for="Time">Time in Seconds</label><br>
+  <input class="corner" type="text" id="Time" placeholder="Time"><br><br>
+  <label class="name" for="Acceleration">Acceleration m/s<sup>2</sup></label><br>
+  <input class="corner" type="text"  id="Acceleration" placeholder="Acceleration"><br><br>
+
+
+  <button type="button"  class="button" onclick="calculate();" >Cal Displacement</button>
+
+              <div>
+              	   <h2 id="result">0</h2>
+            </div>
+</form> 
+</div>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

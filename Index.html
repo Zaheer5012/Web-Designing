@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+	<meta charset="utf-8">
+	<title>Physics (Newton's Law Calculator)</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="https://kit.fontawesome.com/27ee7bbeb2.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="icon/favicon.ico" type="image/x-icon">
+<script>
+      
+          function calculate(){
+            var m = 0;
+            var a = 0;
+
+            var F = 0;
+
+            m = parseInt(document.getElementById("mass").value);
+            a = parseInt(document.getElementById("acceleration").value);
+
+
+            f = m*a;
+            document.getElementById("result").innerHTML=f;
+          }
+      </script>
+
+
+</head>
+
+
+
+
+
+<body>
+	  <div class="container"> 
+	  	<div>
+	<nav>
+<ul>
+  <li><a class="active" href="#home">Netwon's Calcuator</a></li>
+  <li><a href="html/kinematic.html">Kinematic Physic Equation Calculator</a></li>
+  <li><a href="html/math.html">Math Calculator</a></li>
+  <li><a href="html/finance.html">Finance Calculator</a></li>
+</ul>
+</nav>
+</div>
+
+  <div class="center">
+  	<h2 id="title">Newtow’s Law of Motion Calculator  <i class="fas fa-calculator"></i></h2>
+<div>
+<form class="form"  method="post">
+  <label class="name" for="mass">Mass</label><br>
+  <input class="corner" type="text" id="mass" placeholder="Enter Mass"><br><br>
+  <label class="name" for="acceleration">Acceleration</label><br>
+  <input class="corner" type="text" id="acceleration" placeholder="Enter Acceleration"><br><br>
+
+
+  <button type="button"  class="button" onclick="calculate()" >Calculate Force</button>
+
+              <div>
+              	   <h2 id="result">0</h2>
+            </div>
+</form> 
+</div>
+  </div>
+  
+</div>
+
+
+</body>
+</html>
