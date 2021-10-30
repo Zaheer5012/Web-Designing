@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Encryption</title>
+    <link rel="shortcut icon" href="icon/convert.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://kit.fontawesome.com/27ee7bbeb2.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+</head>
+<body>
+
+    <div class="container">
+      <div>
+      <nav>
+            <ul>
+              <li><a class="active" href="#home">Encryption</a></li>
+              <li><a href="html/B2D.html">Binary to Decimal</a></li>
+              <li><a href="html/D2B.html">Decinal to Binary</a></li>
+            </ul>
+      </nav>
+      </div>
+    <div>
+    <br>
+    <i class="fas fa-calculator"></i>
+
+           <br><h3>Input your value for Encryption:</h3>
+           <textarea name="text" cols="50" rows="5"  id="user_input" placeholder="Enter message to encrypt"></textarea><br><br>
+        
+            <button id="submit" class="button button1">Submit</button>
+
+        <h3>User Inut: </h3><p id="real_input"></p>
+        <h3>AES Encrypted: </h3> <p  id="AES_e"></p>   
+        <h3>SHA1 Encrypted: </h3>  <p  id="SHA1_e"></p>    
+        <h3>SHA224 Encrypted: </h3> <p  id="SHA224_e"></p>
+        <h3>SHA256 Encrypted: </h3> <p  id="SHA256_e"></p>        
+      </div>
+
+    </div>
+       
+    
+
+    
+</body>
+</html>
+
+
+
+
+
+<script>
+
+const key = 'Password'
+
+// all html elements
+const Submit = document.getElementById("submit")
+const userInput = document.getElementById("user_input")
+const real_input = document.getElementById("real_input")
+const AES_Encryption = document.getElementById("AES_e")
+const SHA1_Encryption = document.getElementById("SHA1_e")
+const SHA224_Encryption = document.getElementById("SHA224_e")
+const SHA256_Encryption = document.getElementById("SHA256_e")
+
+// getting user input string when button is clicked
+Submit.addEventListener("click", () => {
+    // get user input
+    let inputString = userInput.value
+
+    // reseting text containers 
+    real_input.textContent = ""
+    AES_Encryption.textContent = ""
+    SHA1_Encryption.textContent = ""
+    SHA224_Encryption.textContent = ""
+    SHA256_Encryption.textContent = ""
+
+    // if user input value length is 0 then give an alert
+    if (inputString.trim().length === 0 ){
+        alert("You should must enter string to encrypt");
+        alert("Try again")
+    }
+    else{
+        // encrypting and showing values in html
+        let AES = CryptoJS.AES.encrypt(inputString, key).toString()
+        let SHA1 = CryptoJS.SHA1(inputString).toString()
+        let SHA224 = CryptoJS.SHA224(inputString).toString()
+        let SHA256 = CryptoJS.SHA256(inputString).toString()
+
+        real_input.textContent = inputString
+        AES_Encryption.textContent = AES
+        SHA1_Encryption.textContent = SHA1
+        SHA224_Encryption.textContent = SHA224
+        SHA256_Encryption.textContent = SHA256
+    }
+})
+
+</script>
