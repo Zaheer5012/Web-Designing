@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Random Pasword Generator</title>
+  <link rel="shortcut icon" href="icon/convert.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://kit.fontawesome.com/27ee7bbeb2.js" crossorigin="anonymous">
+  
+</script>
+	
+</head>
+<body>
+
+<div class="container">
+	<div>
+		<label class="heading"> Random Password Generator <i class="fas fa-calculator"></i></label>
+	</div>
+	<div>
+		<p>Password Length: <input type="number" id="length" value="10"> </p>
+	</div>
+	    <div class="c_alphabets">
+      <label>Contain Upper case latters</label>
+      <input type="checkbox" name="capital">
+    </div>
+    <div class="english">
+      <label>Contain Lower Case letter</label>
+      <input type="checkbox" name="lower">
+    </div>
+    <div class="number">
+      <label>Contain Number</label>
+      <input type="checkbox" name="num">
+    </div>
+    <br>
+
+    <button class="btn button button1">Generate</button> <br> <br>
+    <div>
+      <label class="output">Output<br> 
+    <textarea name="paragraph_text" cols="50" rows="1"  class="result">laj19ZajelP</textarea></label><br>
+    </div>
+ </div>
+<script>
+		
+		const btn = document.querySelector(".btn")
+		
+
+function getChar(num) {
+  return document.querySelector("input[name=" + num + "]").checked
+}
+
+btn.addEventListener("click", e => {
+  if (!document.querySelector("input[name=lower]").checked && !document.querySelector("input[name=num]").checked && !document.querySelector("input[name=capital]").checked) {
+    return
+  }
+
+  let password = ""
+  let alphabet = "abcdefghijklmnopqrstuvwxyz"
+  let number = "0123456789"
+  let c_alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+  if (getChar("capital")) password += c_alphabets
+  if (getChar("lower")) password += alphabet
+  if (getChar("num")) password += number
+  
+	l = parseInt(document.getElementById("length").value);
+
+  let result = ""
+      if (l < 9){
+      alert("We are generating password less then 10 chracter, to make it more stronger please input more then 10");
+      
+    }
+    
+    // In case you want user have to enter only more then 10 digits then just add in loop after i < l this || i > 10
+  for (let i = 0; i < l ; i++) {
+
+    let num = Math.floor(Math.random() * password.length)
+    result += password[num]
+
+  }
+  console.log(result)
+  document.querySelector(".result").innerHTML = result
+})
+
+
+	</script>
+</body>
+</html>
