@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>D2B Converter</title>
+<link rel="shortcut icon" href="../icon/convert.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<script src="https://kit.fontawesome.com/27ee7bbeb2.js" crossorigin="anonymous">
+	
+</script>
+<script>
+
+ var Decimal = function(){
+var decimalInput = document.getElementById("decimal_input").value;  
+  document.getElementById("output").value = checkInput(decimalInput);
+
+  console.log(decimalInput);
+}
+
+
+var checkInput = function(input){
+  if(isNaN(input)){
+    alert("Value entered is not in Decimal form, Please enter Decimal number");
+    
+    
+     } else {
+      console.log("You've entered a Decimal number");
+       return convertToBinary(input);
+    }
+}
+
+//Convert input to binary
+var convertToBinary = function D2B(n) {
+  let result = '';
+  if (n != 0) {
+    let dividend = n;
+    while (dividend != 0) {
+      result = (dividend % 2) + result;
+      dividend = Math.floor(dividend/2);
+    }
+  } else { result = "0";}
+  return result;
+}
+
+
+</script>
+
+<style >
+
+</style>
+</head>
+<body>
+	<div class="container">
+
+    <div>
+      <nav>
+            <ul>
+              <li><a class="active" href="../index.html">Encryption</a></li>
+              <li><a href="B2D.html">Binary to Decimal</a></li>
+              <li><a href="#home">Decinal to Binary</a></li>
+            </ul>
+      </nav>
+      </div>
+
+    <div>
+    <br>
+<i class="fas fa-calculator"></i>
+
+<br><h3>Input:</h3>
+<textarea name="paragraph_text" cols="50" rows="5" id="decimal_input"></textarea><br><br>
+<button class="button button1" onclick="Decimal()">Decimal to Binary</button>
+<h3>Output:</h3>
+<textarea name="paragraph_text" cols="50" rows="5" id="output"></textarea><br>
+
+</div>
+
+
+
+</div>
+</body>
+</html>
